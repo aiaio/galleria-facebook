@@ -32,20 +32,24 @@ The Galleria library has a directory called plugins/.  Download the [latest vers
         galleria/plugins/facebook
 4. Load jQuery, Galleria, and the Galleria Facebook Plugin in your HTML page (this assumes you've put the basic Galleria files in a js/ directory):
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-    <script src="js/galleria/galleria-1.2.9.min.js"></script>
-    <script src="js/galleria/plugins/facebook/galleria.facebook.js"></script>
+```html
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="js/galleria/galleria-1.2.9.min.js"></script>
+<script src="js/galleria/plugins/facebook/galleria.facebook.js"></script>
+```
 5. Add the following snippet of HTML to your page, setting your album_id (gathered in step 1), height, and width:
 
-    <script>
-    Galleria.loadTheme('js/galleria/themes/classic/galleria.classic.min.js');
-    Galleria.run('#galleria', {
-     facebook: 'album:291489504249941',
-     width: 745,
-     height: 550,
-     lightbox: true});
-    </script>
-    <div id="galleria"></div>
+```html
+<script>
+Galleria.loadTheme('js/galleria/themes/classic/galleria.classic.min.js');
+Galleria.run('#galleria', {
+ facebook: 'album:291489504249941',
+ width: 745,
+ height: 550,
+ lightbox: true});
+</script>
+<div id="galleria"></div>
+```
 6. You can explore more Galleria display options and fun tweaks in the [Galleria Documentation](http://galleria.io/docs).
 
 An Example!
