@@ -87,7 +87,7 @@ Galleria.Facebook.prototype = {
 	// read: http://stackoverflow.com/questions/16063370/facebook-graph-api-call-no-longer-works-because-of-facebook-cookies
 	// the workaround is to explicitly call the fields we're looking for on a public Facebook album
 	// fields: images, source, picture, link, name
-        var url = 'http://graph.facebook.com/' + params['album_id'] + '?callback=?' + '&fields=photos.fields(images,source,picture,link,name)&photos.limit=' + this.options.max;
+        var url = 'http://graph.facebook.com/' + params['album_id'] + '?callback=?' + '&fields=photos.fields(images,source,picture,link,name),photos.limit(' + this.options.max + ')';
 
         var scope = this;
 
