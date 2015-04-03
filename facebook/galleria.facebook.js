@@ -83,11 +83,11 @@ Galleria.Facebook.prototype = {
 
     _call: function( params, callback ) {
 
-	// as of April 2013 the graph api started acting funny in Chrome and Safari because of a new user cookies scheme on Facebook
-	// read: http://stackoverflow.com/questions/16063370/facebook-graph-api-call-no-longer-works-because-of-facebook-cookies
-	// the workaround is to explicitly call the fields we're looking for on a public Facebook album
-	// fields: images, source, picture, link, name
-        var url = 'http://graph.facebook.com/' + params['album_id'] + '?callback=?' + '&fields=photos.fields(images,source,picture,link,name),photos.limit(' + this.options.max + ')';
+	// as of April 2015 the graphi API changed once again to a new syntax for limiting results and specifying fields
+	// &fields=photos.limit(40){fields,list,here}
+	// https://developers.facebook.com/docs/graph-api/using-graph-api/v2.3
+	// Thank you wundo for the initial fix: https://github.com/aiaio/galleria-facebook/compare/master...wundo:whitespace
+	var url = 'http://graph.facebook.com/' + params['album_id'] + '?callback=?' + '&fields=photos.limit(' + this.options.max + '){images,source,picture,link,name}';
 
         var scope = this;
 

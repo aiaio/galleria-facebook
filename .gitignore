@@ -10,6 +10,10 @@ sitemap.xml
 *.log
 wp-content/cache/
 wp-content/backups/
-sitemap.xml
 sitemap.xml.gz
 *~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
