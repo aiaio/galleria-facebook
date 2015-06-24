@@ -18,26 +18,26 @@ Instructions on how to display a Facebook photo album on your website using Gall
 1. You will first need to find the identifier for the Facebook album that you want to display. I haven't yet found an easy way to do this other than looking in the URL when you're viewing the album at Facebook. Navigate to the album in question, and copy down the album id that I've **{{PUTINBRACES}}** below (for your own album, of course):
   
   http://www.facebook.com/media/set/?set=a.{{291489504249941}}.68160.249094895156069&type=3
-2. Download and install Galleria:
+2. **(New for June 2015!)** Get a Facebook API access token. Facebook now requires us to have an access token to retrieve photos.  This is true even for public photo albums.  We hope to soon have a post up on the easiest way to generate a token (that doesn't expire), but in the meantime follow the advice of @norbertFeron from [Unable to retrieve Facebook photos from album](https://github.com/aiaio/galleria-facebook/issues/14).
+3. Download and install Galleria:
 
   [http://galleria.io/download/](http://galleria.io/download/)
-3. Download and install my Galleria Facebook Plugin:
+4. Download and install my Galleria Facebook Plugin:
 
   Now hosted at GitHub: [https://github.com/aiaio/galleria-facebook](https://github.com/aiaio/galleria-facebook)
-
 The Galleria library has a directory called plugins/.  Download the [latest version of the Galleria Facebook Plugin](https://github.com/aiaio/galleria-facebook/archive/master.zip) from GitHub and place the entire facebook/ folder directly in the plugins/ directory so the file layout looks like this:
 
     galleria/
       galleria/plugins
         galleria/plugins/facebook
-4. Load jQuery, Galleria, and the Galleria Facebook Plugin in your HTML page (this assumes you've put the basic Galleria files in a js/ directory):
+5. Load jQuery, Galleria, and the Galleria Facebook Plugin in your HTML page (this assumes you've put the basic Galleria files in a js/ directory):
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/galleria/galleria-1.4.2.min.js"></script>
 <script src="js/galleria/plugins/facebook/galleria.facebook.js"></script>
 ```
-5. Add the following snippet of HTML to your page, setting your album_id (gathered in step 1), and optionally the [height](http://galleria.io/docs/options/height/) and [width](http://galleria.io/docs/options/width/).  Galleria has great support for [responsive layouts](http://galleria.io/docs/options/responsive/).
+6. Add the following snippet of HTML to your page, setting your album_id (gathered in step 1), facebook_access_token (created in step 2), and optionally the [height](http://galleria.io/docs/options/height/) and [width](http://galleria.io/docs/options/width/).  Galleria has great support for [responsive layouts](http://galleria.io/docs/options/responsive/).
 
 ```html
 <script>
@@ -48,13 +48,14 @@ Galleria.run('#galleria', {
  height: 550,
  lightbox: true,
  facebookOptions: {
-   max: 30 // optional override for limit of 40 photos on an album
+   max: 30, // optional override for limit of 40 photos on an album
+   facebook_access_token: 'YOUR_ACCESS_TOKEN_FROM_STEP_2'
  }
 });
 </script>
 <div id="galleria"></div>
 ```
-6. You can explore more Galleria display options and fun tweaks in the [Galleria Documentation](http://galleria.io/docs).
+7. You can explore more Galleria display options and fun tweaks in the [Galleria Documentation](http://galleria.io/docs).
 
 An Example!
 -----
