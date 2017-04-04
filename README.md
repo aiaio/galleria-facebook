@@ -17,8 +17,12 @@ Instructions on how to display a Facebook photo album on your website using Gall
 
 1. You will first need to find the identifier for the Facebook album that you want to display. I haven't yet found an easy way to do this other than looking in the URL when you're viewing the album at Facebook. Navigate to the album in question, and copy down the album id that I've **{{PUTINBRACES}}** below (for your own album, of course):
   
-  http://www.facebook.com/media/set/?set=a.{{291489504249941}}.68160.249094895156069&type=3
+```
+http://www.facebook.com/media/set/?set=a.{{291489504249941}}.68160.249094895156069&type=3
+```
+
 2. **(New for June 2015!)** Get a Facebook API access token. Facebook now requires us to have an access token to retrieve photos.  This is true even for public photo albums.  We hope to soon have a post up on the easiest way to generate a token (that doesn't expire), but in the meantime follow the advice of @norbertFeron from [Unable to retrieve Facebook photos from album](https://github.com/aiaio/galleria-facebook/issues/14).
+
 3. Download and install Galleria:
 
   [http://galleria.io/download/](http://galleria.io/download/)
@@ -67,6 +71,6 @@ Finally, do consider purchasing additional themes as the developer generously do
 
 Credits
 ----
-Brought to you by your friends at [Ai](http://www.alexanderinteractive.com).
+Brought to you by your friends at [Cake & Arrow](https://cakeandarrow.com).
 
-Special thanks to the active community of users and testers on the [aiaio blog](http://www.alexanderinteractive.com/blog).
+Special thanks to the active community of users and testers on the [aiaio blog](https://cakeandarrow.com/newsfeed/).
