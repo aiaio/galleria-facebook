@@ -26,6 +26,7 @@ http://www.facebook.com/media/set/?set=a.{{291489504249941}}.68160.2490948951560
 3. Download and install Galleria:
 
   [http://galleria.io/download/](http://galleria.io/download/)
+  
 4. Download and install my Galleria Facebook Plugin:
 
   Now hosted at GitHub: [https://github.com/aiaio/galleria-facebook](https://github.com/aiaio/galleria-facebook)
