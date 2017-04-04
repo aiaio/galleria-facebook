@@ -110,7 +110,7 @@ Galleria.Facebook.prototype = {
     // the first element of the photo.images array is the largest one
 
     _getBig: function( photo ) {
-	
+
 	return photo.images[0].source;
 
     },
