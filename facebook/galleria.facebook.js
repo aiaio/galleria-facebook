@@ -15,10 +15,9 @@ Galleria.requires(1.25, 'The Facebook Plugin requires Galleria version 1.2.5 or 
 
 // The script path
 var PATH = Galleria.utils.getScriptPath();
-
 // The version of the Facebook API that we are currently supporting
 // used to version the API request like https://graph.facebook.com/v2.3/REQUEST
-var FACEBOOK_API_VERSION = 'v2.3'
+var FACEBOOK_API_VERSION = 'v8.0'
 
 /**
 
@@ -93,7 +92,7 @@ Galleria.Facebook.prototype = {
 	// https://developers.facebook.com/docs/graph-api/using-graph-api/v2.3
 	// Thank you @wundo for the initial fix: https://github.com/aiaio/galleria-facebook/compare/master...wundo:whitespace
 	// Thank you @randomdave and @norbertFeron for your help diagnosing and solving: https://github.com/aiaio/galleria-facebook/issues/14
-	var url = 'https://graph.facebook.com/' + FACEBOOK_API_VERSION + '/' + params['album_id'] + '?callback=?' + '&fields=photos.limit(' + this.options.max + '){images,source,picture,link,name}&access_token=' + this.options.facebook_access_token
+	var url = 'https://graph.facebook.com/' + FACEBOOK_API_VERSION + '/' + params['album_id'] + '?callback=?' + '&fields=photos.limit(' + this.options.max + '){images,picture,link,name}&access_token=' + this.options.facebook_access_token;
 
         var scope = this;
 
@@ -136,11 +135,11 @@ Galleria.Facebook.prototype = {
                 break;
 
             case 'original':
-                img = photo.source;
+                img = this._getBig( photo );
                 break;
 
             default:
-                img = photo.source;
+                img = this._getBig( photo );
                 break;
         }
         return img;
